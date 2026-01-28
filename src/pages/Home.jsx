@@ -25,10 +25,16 @@ export default function Home() {
         <>
             {/* Hero Section */}
             <section className="relative flex items-center pt-16 pb-24 overflow-hidden bg-white">
-                {/* Background Gradients */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                    <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[100px]" />
-                    <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-sky-300/10 rounded-full blur-[100px]" />
+                {/* Background Gradients - Optimized for Mobile GPUs */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div
+                        className="absolute top-[-10%] right-[-5%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-sky-500/10 rounded-full blur-[60px] md:blur-[120px]"
+                        style={{ willChange: 'filter' }}
+                    />
+                    <div
+                        className="absolute bottom-[-10%] left-[-5%] w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-sky-300/10 rounded-full blur-[60px] md:blur-[120px]"
+                        style={{ willChange: 'filter' }}
+                    />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -47,19 +53,20 @@ export default function Home() {
                                 animate="visible"
                                 variants={{
                                     hidden: { opacity: 1 },
-                                    visible: { transition: { staggerChildren: 0.03 } }
+                                    visible: { transition: { staggerChildren: 0.1 } }
                                 }}
                             >
-                                {"Innovating Future Technology...".split("").map((char, index) => (
+                                {"Innovating Future Technology...".split(" ").map((word, index) => (
                                     <motion.span
                                         key={index}
                                         variants={{
-                                            hidden: { opacity: 0, y: 5 },
+                                            hidden: { opacity: 0, y: 10 },
                                             visible: { opacity: 1, y: 0 }
                                         }}
-                                        className="inline-block"
+                                        className="inline-block mr-1.5 last:mr-0"
+                                        style={{ willChange: 'transform, opacity' }}
                                     >
-                                        {char === " " ? "\u00A0" : char}
+                                        {word}
                                     </motion.span>
                                 ))}
                             </motion.span>
