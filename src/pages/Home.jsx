@@ -47,18 +47,19 @@ export default function Home() {
                                 animate="visible"
                                 variants={{
                                     hidden: { opacity: 1 },
-                                    visible: { transition: { staggerChildren: 0.05 } }
+                                    visible: { transition: { staggerChildren: 0.03 } }
                                 }}
                             >
-                                {"Innovating Future Technology".split("").map((char, index) => (
+                                {"Innovating Future Technology...".split("").map((char, index) => (
                                     <motion.span
                                         key={index}
                                         variants={{
                                             hidden: { opacity: 0, y: 5 },
                                             visible: { opacity: 1, y: 0 }
                                         }}
+                                        className="inline-block"
                                     >
-                                        {char}
+                                        {char === " " ? "\u00A0" : char}
                                     </motion.span>
                                 ))}
                             </motion.span>

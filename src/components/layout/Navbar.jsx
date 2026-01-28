@@ -43,11 +43,11 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-white shadow-md ${scrolled ? 'py-2' : 'py-4'
+            className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 bg-white shadow-md ${scrolled ? 'py-1' : 'py-2'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-3 items-center h-16 md:h-20">
+                <div className="grid grid-cols-3 items-center h-12 md:h-16">
                     {/* Left: Menu Toggle + Brand */}
                     <div className="flex justify-start items-center gap-2">
                         <button
